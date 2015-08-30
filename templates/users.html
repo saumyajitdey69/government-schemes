@@ -1,0 +1,351 @@
+{% include 'loadfiles.html' %}
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="">
+	<meta name="author" content="">
+
+	<title>InfoScheme-Users</title>
+
+</head>
+
+
+
+<body>
+
+
+	<div id="wrapper">
+		<!-- Navigation -->
+		<nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
+			<div class="navbar-header">
+				<a class="navbar-brand" href="../users">InfoScheme</a>
+			</div>
+			<!-- /.navbar-header -->
+
+			<ul class="nav navbar-top-links navbar-right">
+
+
+				<!-- /.dropdown -->
+				<li class="dropdown">
+					<a class="dropdown-toggle" data-toggle="dropdown" href="#">
+						<i class="fa fa-user fa-fw"></i>  <i class="fa fa-caret-down"></i>
+					</a>
+					<ul class="dropdown-menu dropdown-user">
+
+						<li><a href="login.html"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
+						</li>
+					</ul>
+					<!-- /.dropdown-user -->
+				</li>
+				<!-- /.dropdown -->
+			</ul>
+			<!-- /.navbar-top-links -->
+
+			<div class="navbar-default sidebar" role="navigation">
+				<div class="sidebar-nav navbar-collapse">
+					<ul class="nav" id="side-menu">
+						<li class="sidebar-search">
+							<div class="input-group custom-search-form">
+								<input type="text" class="form-control" placeholder="Search...">
+								<span class="input-group-btn">
+									<button class="btn btn-default" type="button">
+										<i class="fa fa-search"></i>
+									</button>
+								</span>
+							</div>
+							<!-- /input-group -->
+						</li>
+						<li>
+							<a href="#"><i class="fa fa-sitemap fa-fw"></i> Filters<span class="fa arrow"></span></a>
+							<ul class="nav nav-second-level">
+								<li id="static-age">
+									<a href='#'>Age</a>
+								</li>
+								<li id='static-dept'>
+									<a href="#">Departments</a>
+								</li>
+								<li id='static-category'>
+									<a href="#">Categories</a>
+								</li>
+
+							</ul>
+							<!-- /.nav-second-level -->
+						</li>
+						<li>
+							<a href="../login"><i class="fa fa-dashboard fa-fw"></i> Insert Scheme</a>
+						</li>
+
+
+
+
+					</ul>
+				</div>
+				<!-- /.sidebar-collapse -->
+			</div>
+			<!-- /.navbar-static-side -->
+		</nav>
+
+
+
+		<!-- ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
+
+
+
+
+		<div id="page-wrapper">
+
+
+			<div class="col-lg-12">
+				<header>
+					<div class="container">
+						<div class="row">
+							<div class="col-lg-12">
+								<div class="intro-text" >
+									<span class="name">Search Scheme</span>
+									<span class="skills">Scheme Suggestions - Custom Filters</span>
+								</div>
+							</div>
+						</div>
+					</div>
+				</header>
+				<br/>
+			</div>
+
+
+
+
+			<!-- /.row -->
+			<div class="row">
+				<div class="col-lg-12">
+					<div class="panel panel-default">
+						
+						<div class="panel-body">
+							<div class="row">
+								<div class="col-lg-12">
+
+									<div class="row">
+										<br/>
+										<div class="panel panel-default">
+											<div class="panel-heading">
+												Search Results
+											</div>
+											<!-- /.panel-heading -->
+											<div class="panel-body">
+												<div class="dataTable_wrapper">
+													<table class="table table-striped table-bordered" id="dataTables-example">
+														<thead>
+															<tr>
+																
+																<th><a style='color:black'>Scheme Name</a></th>
+																<th><a style='color:black'>Department Name</a></th>
+																<th><a style='color:black'>Details</a></th>
+																<!-- <th></th>
+																<th>Engine version</th>
+																<th>CSS grade</th> -->
+															</tr>
+														</thead>
+														<tbody id='tbodyid'>
+														{% for tuple in data %}
+
+															<tr class="gradeX">
+
+																<td>{{tuple.scheme_name}}</td>
+																<td>{{tuple.dept_name}}</td>
+																<td>{{tuple.s_details}}</td>
+																<!-- <td>Mac OS 8-9</td>
+																<td class="center">-</td>
+																<td class="center">X</td> -->
+															</tr>
+
+														{% endfor %}
+														
+														</tbody>
+													</table>
+												</div>
+											</div>
+											<!-- /.panel-body -->
+										</div>
+										<div class="col-lg-12">
+
+											<button type="button" id = 'dynamic-filter' class="btn btn-info btn-block" data-toggle="modal" data-target="#filter-better">
+												<section class="success" id="about">
+													<div class="container">
+														<div class="row">
+															<div class="col-lg-12 text-center">
+																<h2>Get Better Results</h2>
+
+															</div>
+														</div>
+													</div>
+												</section>
+											</button>
+										</div>
+
+
+
+
+										<!-- /.col-lg-12 -->
+									</div>
+
+								</div>
+								<!-- /.col-lg-6 (nested) -->
+							</div>
+							<!-- /.row (nested) -->
+						</div>
+						<!-- /.panel-body -->
+					</div>
+					<!-- /.panel -->
+				</div>
+				<!-- /.col-lg-12 -->
+			</div>
+
+
+
+
+
+			<!-- /.row -->
+		</div>
+		<!-- /#page-wrapper -->
+	</div>
+	<!-- /#wrapper -->
+
+
+
+
+
+
+
+
+
+
+
+
+<!--   <div id="panel1">
+    <table>
+      <tr>
+       <td><input id="test1" type="text" value="" /></td>
+     </tr>
+     <tr>
+       <td><input id="test5" type="text" value="" /></td>
+     </tr>
+   </table>
+   <button id="testbtn" class="btn" type="button">test</button>
+</div> -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- /////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
+
+
+
+
+<div class="modal fade static-age-modal">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+				<h4 class="modal-title">Set Age</h4>
+			</div>
+			<div class="modal-body">
+				<input type='number' class='form-control' id='selected-age'/>{% csrf_token %}
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+				<button type="button" class="btn btn-primary filter-age" data-dismiss="modal">Filter</button>
+			</div>
+		</div><!-- /.modal-content -->
+	</div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+<div class="modal fade get_better_filter" id="filter-better">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<div id='filter-title'></div>
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>{% csrf_token %}
+			</div>
+			<div class="modal-body">
+				<input type='text' class='form-control' id='machine-category'/>{% csrf_token %}
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+				<button type="button" class="btn btn-primary filter-better" data-dismiss="modal">Filter</button>
+			</div>
+		</div><!-- /.modal-content -->
+	</div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+<div class="modal fade static-category-modal">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+				<h4 class="modal-title">Select Category</h4>
+			</div>
+			<div class="modal-body">
+				<input type='text' class='form-control' id='selected-category' placeholder='GEN/OBC/SC/ST/PWD'/>{% csrf_token %}
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+				<button type="button" class="btn btn-primary filter-category" data-dismiss="modal">Filter</button>
+			</div>
+		</div><!-- /.modal-content -->
+	</div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+
+<div class="modal fade static-department-modal">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+				<h4 class="modal-title">Select Department</h4>
+			</div>
+			<div class="modal-body">
+				<select id='select-dep' class='form-control'>
+					{% for dep in dept %}
+					<option>{{dep|title}}</option>
+					{% endfor %}
+				</select>
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+				<button type="button" class="btn btn-primary filter-dept" data-dismiss="modal">Filter</button>
+			</div>
+		</div><!-- /.modal-content -->
+	</div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+
+
+
+
+
+</body>
+
+</html>
